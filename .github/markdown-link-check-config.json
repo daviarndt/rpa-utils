@@ -1,0 +1,8 @@
+{
+  "//": "Only validate relative/internal links. External URLs (vendor docs, YouTube, Udemy, etc.) are skipped to avoid flaky CI from rate limits or transient outages.",
+  "ignorePatterns": [
+    { "pattern": "^https?://" }
+  ],
+  "retryOn429": true,
+  "aliveStatusCodes": [200, 206]
+}

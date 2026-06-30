@@ -80,7 +80,11 @@ Formatting conventions:
 
 - Use fenced code blocks for commands, registry paths, and code. Specify the language where it helps (` ```cmd `, ` ```powershell `, ` ```vb `, ` ```csharp `).
 - Use tables for flag-by-flag references, registry value lists, and compatibility matrices.
-- Always note the **product versions** a finding was validated against (e.g. "Blue Prism 7.4.1, Edge 148.x"). Behavior changes across vendor releases.
+- Always note the **product versions** a finding was validated against. Behavior changes across vendor releases, so make this explicit and easy to spot. Put a **`Tested with`** line near the top of every guide (and fill the same field in the issue/PR templates), e.g.:
+
+  ```
+  > **Tested with:** Blue Prism 7.4.1 · Microsoft Edge 148.x · Windows Server
+  ```
 - Prefer relative links between docs so they keep working inside forks.
 
 ## Code, VBOs & DLLs

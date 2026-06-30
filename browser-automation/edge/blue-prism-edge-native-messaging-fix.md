@@ -2,6 +2,8 @@
 
 A complete, field-tested guide for getting Blue Prism's Edge browser extension and Native Messaging Host working reliably — including the root cause of the most common failure mode (`Die Browsererweiterung konnte nicht erkannt werden` / "Could not find an active native messaging host associated with the selected browser") and a stable, repeatable launch configuration for isolated/disposable browser sessions.
 
+> **Tested with:** Blue Prism 7.4.x · Microsoft Edge (Chromium) 148.x · Windows 10/11 & Windows Server
+
 ## Table of Contents
 
 - [Background: Why This Document Exists](#background-why-this-document-exists)

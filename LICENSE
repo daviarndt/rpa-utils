@@ -1,0 +1,21 @@
+# Licensing
+
+`rpa-utils` is **dual-licensed** to fit its mixed content:
+
+- **Source code** — the C# source, PowerShell build scripts, VBO source and exported
+  objects, CI configuration, and any other code in this repository — is licensed under the
+  **MIT License**. See [`LICENSE-CODE`](./LICENSE-CODE).
+
+- **Documentation** — the Markdown guides, runbooks, and other written/explanatory
+  content — is licensed under the **Creative Commons Attribution 4.0 International
+  (CC BY 4.0)** license. See [`LICENSE-DOCS`](./LICENSE-DOCS).
+
+In short: you may use, modify, and redistribute everything here, including commercially.
+For the **code** you must keep the MIT copyright notice; for the **documentation** you must
+give appropriate credit (attribution) and link back to this repository.
+
+If a file's nature is ambiguous, treat code-like files (`*.cs`, `*.ps1`, `*.vb`,
+`*.bpobject`, `*.bprelease`, workflow/config files) as MIT and prose `*.md` content as
+CC BY 4.0.
+
+Copyright (c) 2026 Davi Arndt.

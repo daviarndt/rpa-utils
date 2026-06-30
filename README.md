@@ -1,5 +1,10 @@
 # rpa-utils
 
+[![License: MIT + CC BY 4.0](https://img.shields.io/badge/license-MIT%20%2B%20CC%20BY%204.0-blue.svg)](./LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
+[![Built for Blue Prism](https://img.shields.io/badge/built%20for-Blue%20Prism-2b3a8c.svg)](https://www.blueprism.com/)
+[![YouTube: RPA Hour](https://img.shields.io/badge/YouTube-RPA%20Hour-FF0000.svg?logo=youtube&logoColor=white)](https://www.youtube.com/@rpahour)
+
 A growing collection of practical utilities, troubleshooting guides, custom VBOs, .NET wrapper DLLs, and configuration runbooks for **Blue Prism** RPA development — built from real production issues, debugged step by step, and documented so the next person (including future-me) doesn't have to start from zero.
 
 This is not official Blue Prism documentation. It's field notes: the stuff that actually happens when you try to run Blue Prism against a real corporate Edge environment, a flaky SOAP API, a PDF you need to parse with a custom .NET DLL, or a GPO that quietly overrides your registry fix. Some of it confirms what the official docs say. Some of it contradicts them, because production doesn't always behave like the docs.
@@ -29,7 +34,9 @@ rpa-utils/
 │       └── docs/                     (VBO action reference)
 ├── vbos/
 │   └── (general-purpose reusable VBOs, one folder per VBO)
+├── .github/                           (issue/PR templates, CODEOWNERS, CI workflows)
 ├── CONTRIBUTING.md
+├── LICENSE                            (dual-license overview: MIT + CC BY 4.0)
 └── README.md                          (this file)
 ```
 
@@ -76,6 +83,17 @@ live in [`CONTRIBUTING.md`](./CONTRIBUTING.md) — the essentials:
 - **No client or confidential data** — anonymize company names, internal URLs, servers, and credentials before committing (see the sanitizing checklist in `CONTRIBUTING.md`).
 - **Commits follow [Conventional Commits](https://www.conventionalcommits.org/)** (e.g. `docs(edge): add compatibility matrix`).
 - If something here turns out to be wrong, outdated, or version-specific, open an issue/PR with the correction — a lot of this is the result of trial and error against a specific product version pairing, and vendor updates can change behavior.
+
+## License
+
+This repository is **dual-licensed** to fit its mixed content:
+
+- **Code** (C#, PowerShell, VBO source/exports, CI config) — [MIT License](./LICENSE-CODE)
+- **Documentation** (the Markdown guides and written content) — [CC BY 4.0](./LICENSE-DOCS)
+
+You can use, adapt, and redistribute everything here, including commercially — keep the MIT
+notice for code, and give attribution (a link back here) for documentation. See
+[`LICENSE`](./LICENSE) for the details.
 
 ## Disclaimer
 

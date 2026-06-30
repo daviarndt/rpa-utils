@@ -2,6 +2,8 @@
 
 A guide for pinning Microsoft Edge to a specific version and preventing automatic updates — primarily relevant when a Blue Prism (or other RPA tool's) browser extension is incompatible with the latest Edge release.
 
+> **Tested with:** Blue Prism 7.4.x · Microsoft Edge (Chromium) 148.x · Windows 10/11 & Windows Server
+
 ## Table of Contents
 
 - [When You Need This](#when-you-need-this)

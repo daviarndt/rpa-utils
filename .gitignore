@@ -1,0 +1,29 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# .NET build output
+bin/
+obj/
+*.user
+*.suo
+
+# Compiled binaries (source + build scripts are committed; rebuild locally)
+*.dll
+*.pdb
+
+# NuGet / package download artifacts
+*.nupkg
+packages/
+
+# Editor / IDE
+.vs/
+.vscode/
+.idea/
+
+# Logs and temp
+*.log
+*.tmp
+gpresult.html
+output.html

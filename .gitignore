@@ -13,6 +13,11 @@ obj/
 *.dll
 *.pdb
 
+# Exception: prebuilt release binaries shipped on purpose for locked-down
+# environments that cannot fetch dependencies. Source + build script still ship too.
+!dotnet-wrappers/pdfpig-reader/dist/
+!dotnet-wrappers/pdfpig-reader/dist/*.dll
+
 # NuGet / package download artifacts
 *.nupkg
 packages/

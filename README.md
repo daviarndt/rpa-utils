@@ -31,9 +31,10 @@ rpa-utils/
 │       ├── README.md
 │       ├── src/                      (DLL source code)
 │       ├── build/                    (PowerShell build scripts)
+│       ├── dist/                     (prebuilt DLLs, ready to deploy)
 │       └── docs/                     (VBO action reference)
 ├── vbos/
-│   └── (general-purpose reusable VBOs, one folder per VBO)
+│   └── pdfpig-reader/                (importable .bprelease + README)
 ├── .github/                           (issue/PR templates, CODEOWNERS, CI workflows)
 ├── CONTRIBUTING.md
 ├── LICENSE                            (dual-license overview: MIT + CC BY 4.0)
@@ -55,13 +56,15 @@ rpa-utils/
 
 | Component | What it covers |
 |---|---|
-| [`dotnet-wrappers/pdfpig-reader/`](./dotnet-wrappers/pdfpig-reader/) | Custom .NET wrapper DLL built on top of [PdfPig](https://github.com/UglyToad/PdfPig) for extracting text from PDF files inside Blue Prism — page counts, per-page text, keyword search, and word-level coordinates for region extraction. Includes the C# source ([`src/`](./dotnet-wrappers/pdfpig-reader/src/)), the PowerShell build scripts ([`build/`](./dotnet-wrappers/pdfpig-reader/build/)), and a full Action-by-Action reference ([`docs/vbo-actions-reference.md`](./dotnet-wrappers/pdfpig-reader/docs/vbo-actions-reference.md)). Built and compiled on the target Windows machine via PowerShell `Add-Type` — no Visual Studio required. |
+| [`dotnet-wrappers/pdfpig-reader/`](./dotnet-wrappers/pdfpig-reader/) | Custom .NET wrapper DLL built on top of [PdfPig](https://github.com/UglyToad/PdfPig) for extracting text from PDF files inside Blue Prism — page counts, per-page text, keyword search, and word-level coordinates for region extraction. Includes the C# source ([`src/`](./dotnet-wrappers/pdfpig-reader/src/)), the PowerShell build scripts ([`build/`](./dotnet-wrappers/pdfpig-reader/build/)), **prebuilt DLLs** ([`dist/`](./dotnet-wrappers/pdfpig-reader/dist/)) for locked-down environments, and a full Action-by-Action reference ([`docs/vbo-actions-reference.md`](./dotnet-wrappers/pdfpig-reader/docs/vbo-actions-reference.md)). Built via PowerShell `Add-Type` — no Visual Studio required. |
 
 ### VBOs
 
 General-purpose, reusable VBOs not tied to a specific client project — utility actions meant to be dropped into any Blue Prism environment.
 
-*(folder will be populated incrementally — see [Roadmap](#roadmap))*
+| VBO | What it covers |
+|---|---|
+| [`vbos/pdfpig-reader/`](./vbos/pdfpig-reader/) | Importable Blue Prism release (`.bprelease`) for the PDF text-extraction VBO backed by the [PdfPig wrapper](./dotnet-wrappers/pdfpig-reader/). Import it, copy the DLLs into the Blue Prism folder, and the PDF Actions are ready to use. Exported from Blue Prism 7.4.1. |
 
 ## Quick start
 

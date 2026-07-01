@@ -18,15 +18,22 @@ a clean fit for locked-down RPA runtimes.
 ```
 pdfpig-reader/
 ├── README.md                       (this file)
+├── THIRD-PARTY-NOTICES.md          attribution for redistributed PdfPig binaries
 ├── src/
 │   └── BluePrismPdfHelper.cs        canonical wrapper source (single source of truth)
 ├── build/
 │   ├── 1_download_pdfpig.ps1        download + extract the PdfPig NuGet DLLs
 │   ├── 2_copy_dlls.ps1              copy PdfPig DLLs into the Blue Prism folder
 │   └── 3_compile_pdf_helper.ps1     compile src/BluePrismPdfHelper.cs into the DLL
+├── dist/                           prebuilt DLLs, ready to drop into Blue Prism
+│   ├── BluePrismPdfHelper.dll
+│   └── UglyToad.PdfPig.*.dll        (6 PdfPig dependency DLLs)
 └── docs/
     └── vbo-actions-reference.md     every Blue Prism Action, with inputs/outputs/Code Stage
 ```
+
+The importable VBO release that wraps this DLL lives under
+[`vbos/pdfpig-reader/`](../../vbos/pdfpig-reader/).
 
 ## What it does
 
@@ -45,6 +52,12 @@ Full Action-by-Action documentation (inputs, outputs, and the exact Code Stage f
 is in [`docs/vbo-actions-reference.md`](./docs/vbo-actions-reference.md).
 
 ## Build & deploy
+
+> **Just want to use it?** The prebuilt DLLs are in [`dist/`](./dist/). Copy them into
+> `C:\Program Files\Blue Prism Limited\Blue Prism Automate\` and import the VBO from
+> [`vbos/pdfpig-reader/`](../../vbos/pdfpig-reader/) — no build required. Attribution for the
+> redistributed PdfPig binaries is in [`THIRD-PARTY-NOTICES.md`](./THIRD-PARTY-NOTICES.md).
+> Build from source (below) only if you want to change the wrapper or verify the binaries.
 
 The build was originally done **on the target Windows machine** using the bundled
 PowerShell scripts (PowerShell's `Add-Type` compiles the DLL with the C# compiler that

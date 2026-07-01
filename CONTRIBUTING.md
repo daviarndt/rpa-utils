@@ -93,7 +93,9 @@ Formatting conventions:
 - **Make it rebuildable from scratch.** Provide enough setup notes (dependencies, versions, build commands) for someone else to reproduce the binary.
 - **Pin dependency versions.** State the exact NuGet/package version a build was made against.
 - **Avoid duplicating source.** If a build script needs the source code, have it read the canonical source file rather than embedding a second copy that can drift.
-- **VBOs:** when you add an exported VBO (`.bpobject` / `.bprelease`), document its Actions (inputs, outputs, and the Code Stage logic) in an accompanying Markdown file, and note the Blue Prism version it was exported from.
+- **Prebuilt binaries are allowed *in addition* to source, not instead of it.** RPA runtimes are often locked down (no NuGet/internet), so shipping a `dist/` with ready-to-deploy DLLs is genuinely useful. It's only accepted alongside the source and build script — never binary-only. `*.dll` is ignored by default; add a scoped `!path/to/dist/*.dll` exception in `.gitignore` for a deliberate release.
+- **Attribute redistributed third-party binaries.** If your `dist/` includes DLLs you didn't author (e.g. a NuGet dependency), add a `THIRD-PARTY-NOTICES.md` listing each component, its version, project URL, and license.
+- **VBOs:** when you add an exported VBO (`.bpobject` / `.bprelease`), give it its own folder under `vbos/<name>/` with a `README.md` documenting its Actions (inputs, outputs, and the Code Stage logic), the Blue Prism version it was exported from, and any DLL dependencies + where to get them.
 
 ## Sanitizing Client & Environment Data
 

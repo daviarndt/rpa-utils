@@ -26,6 +26,8 @@ rpa-utils/
 │       ├── README.md
 │       ├── blue-prism-edge-native-messaging-fix.md
 │       └── edge-version-downgrade-and-update-control.md
+├── input-automation/                  (send keys / global send keys guides)
+├── office-automation/                 (Excel VBO automation guides)
 ├── dotnet-wrappers/
 │   └── pdfpig-reader/
 │       ├── README.md
@@ -51,6 +53,18 @@ rpa-utils/
 |---|---|
 | [`blue-prism-edge-native-messaging-fix.md`](./browser-automation/edge/blue-prism-edge-native-messaging-fix.md) | Root-cause fix for the classic *"The browser extension could not be detected — no active native messaging host found"* error. Spoiler: it's very often **not** a native messaging host problem — it's Edge's Background Mode keeping a zombie process alive that silently ignores every command-line flag you pass on launch. Includes the full validated launch command line (flag-by-flag explained), required registry policies, a Blue Prism pre-launch Code Stage to guarantee a clean process state, and how to load the extension unpacked when the signed `.crx` fails signature validation. |
 | [`edge-version-downgrade-and-update-control.md`](./browser-automation/edge/edge-version-downgrade-and-update-control.md) | How to downgrade Edge to a Blue Prism–compatible version and **actually stop it from auto-updating back**. Includes the **Blue Prism / Edge compatibility matrix**, three ways to lock the version (registry policy, `gpedit.msc` with Edge ADMX templates, and disabling the Edge Update services/tasks), a CMD/PowerShell command reference (`gpupdate /force`, `gpresult /h`, `taskkill`, etc.) and how to check an extension's real ID via Developer Mode. |
+
+### Input Automation
+
+| Document | What it covers |
+|---|---|
+| [`input-automation/send-keys-and-send-key-events.md`](./input-automation/send-keys-and-send-key-events.md) | Choosing between **Send Keys**, **Send Key Events**, **Global Send Keys**, and **Global Send Key Events**; how each one delivers keystrokes; key notation; and fixes for "keystrokes go nowhere / modifier doesn't register / works attended, fails unattended". |
+
+### Office Automation
+
+| Document | What it covers |
+|---|---|
+| [`office-automation/excel-automation.md`](./office-automation/excel-automation.md) | Driving Excel with the **MS Excel VBO** without leaving orphaned `EXCEL.EXE` processes, and making it run under an **unattended service account** (the Session 0 "Desktop folder" fix). Plus efficient bulk read/write, regional/format pitfalls, and the COM-free alternative. |
 
 ### .NET Wrappers
 
